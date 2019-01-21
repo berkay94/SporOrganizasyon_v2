@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.5, 10.125" name="SporO">
+  <DataContextMoniker Name="/SporODataContext" />
+  <nestedChildShapes>
+    <classShape Id="a2d08753-6117-4aca-885a-fd902a7b2fbf" absoluteBounds="4, 1.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/SporODataContext/Etkinlik" />
+      <nestedChildShapes>
+        <elementListCompartment Id="506a7542-1254-46d7-9b01-8d210f54126f" absoluteBounds="4.015, 1.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e9467de-44ac-4715-a799-a000de2ff9e9" absoluteBounds="1.375, 1.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/SporODataContext/EtkinlikTipi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3b32a0b5-d75d-4f60-b99a-e839e83ce0ad" absoluteBounds="1.3900000000000001, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb638fd4-8b97-4dc2-ae72-9321770620f3" absoluteBounds="0.5, 7.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SporODataContext/HataLoglari" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90c5da0d-172e-4f01-84f3-37f4982b38da" absoluteBounds="0.515, 8.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d79129ca-8c92-44a0-b01f-a4a5281afacd" absoluteBounds="3.25, 4.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/SporODataContext/Ilceler" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14c07d98-929f-4ac3-b918-038393f7a794" absoluteBounds="3.265, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce9d8dd0-a347-45ec-9044-3b521222b384" absoluteBounds="0.5, 5, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SporODataContext/Iller" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f4e79a7-3669-4eaa-870c-75a19b79ddcc" absoluteBounds="0.515, 5.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7884086b-fa85-47d4-81cd-8ce0c594d9d2" absoluteBounds="10.25, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SporODataContext/Katilanlar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="198efce7-c3f2-4a3e-97b5-70ca6529db3a" absoluteBounds="10.265, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8c4f2d3-eb77-45b6-9138-180ec2eb7bd7" absoluteBounds="7.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/SporODataContext/Kullanici" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5428b8c-597a-46fe-9b26-8d67f879eaf3" absoluteBounds="7.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d21041f-c0b2-421c-b9bf-2a2ae976dbba" absoluteBounds="3.5, 7.75, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/SporODataContext/KullaniciSpor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4bcadcb6-ce9e-4405-9efa-3db73c96a02f" absoluteBounds="3.515, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ebe4561-f666-407a-b14d-de878402d8de" absoluteBounds="6, 4.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/SporODataContext/Mekan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a3139c3-cea9-4c14-a9d8-b68b4e415614" absoluteBounds="6.015, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a8d6774-03c6-497c-b1bc-ef00176f304b" absoluteBounds="6.5, 7.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/SporODataContext/Sporlar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bfbef07-7208-4f7d-aabf-7e29ae17cf59" absoluteBounds="6.515, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 2.56814697265625); (4 : 2.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SporODataContext/EtkinlikTipi/EtkinlikTipi_Etkinlik" />
+      <nodes>
+        <classShapeMoniker Id="0e9467de-44ac-4715-a799-a000de2ff9e9" />
+        <classShapeMoniker Id="a2d08753-6117-4aca-885a-fd902a7b2fbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 5.59699625651042); (3.25 : 5.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SporODataContext/Iller/Iller_Ilceler" />
+      <nodes>
+        <classShapeMoniker Id="ce9d8dd0-a347-45ec-9044-3b521222b384" />
+        <classShapeMoniker Id="d79129ca-8c92-44a0-b01f-a4a5281afacd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.5 : 2.34699625651042); (10.25 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SporODataContext/Kullanici/Kullanici_Katilanlar" />
+      <nodes>
+        <classShapeMoniker Id="c8c4f2d3-eb77-45b6-9138-180ec2eb7bd7" />
+        <classShapeMoniker Id="7884086b-fa85-47d4-81cd-8ce0c594d9d2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.25 : 5.56814697265625); (6 : 5.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SporODataContext/Ilceler/Ilceler_Mekan" />
+      <nodes>
+        <classShapeMoniker Id="d79129ca-8c92-44a0-b01f-a4a5281afacd" />
+        <classShapeMoniker Id="5ebe4561-f666-407a-b14d-de878402d8de" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
