@@ -23,8 +23,18 @@ namespace DAL
             con = new SqlConnection(constr);
         }
 
-        public int KullaniciKaydet(Kullanici k,int[] s)
+        public int KullaniciKaydet(string ad, string soyad, string email, string telefon, string sifre, string ilce, DateTime dogumtarihi, int cinsiyet, int[] s)
         {
+            Kullanici k = new Kullanici();
+            k.Ad = ad;
+            k.Soyad = soyad;
+            k.Email = email;
+            k.Telefon = telefon;
+            k.Sifre = sifre;
+            k.Ilce = ilce;
+            k.DogumTarihi = dogumtarihi;
+            k.Cinsiyet = cinsiyet;
+            
             int kayitSayisi = 0;
             try
             {
@@ -116,8 +126,17 @@ namespace DAL
             return kayitSayisi;
         }//Bitti
 
-        public int EtkinlikAc(Etkinlikler e)
+        public int EtkinlikAc(string etkinlikAd, int tipId, int mekanId, DateTime etkinlikTarihi, int kontenjan, int sporId)
         {
+            Etkinlikler e = new Etkinlikler();
+            e.EtkinlikAdi = etkinlikAd;
+            e.TipId = tipId;
+            e.MekanId = mekanId;
+            e.EtkinlikTarihi = etkinlikTarihi;
+            e.Kontenjan = kontenjan;
+            e.Sid = sporId;
+            e.IsActive = 1;
+
             int kayitSayisi = 0;
             try
             {
@@ -137,8 +156,12 @@ namespace DAL
             return kayitSayisi;
         }
 
-        public int MekanAc(Mekanlar m)
+        public int MekanAc(string mekanAdi, int ilceId)
         {
+            Mekanlar m = new Mekanlar();
+            m.MekanAdi = mekanAdi;
+            m.IlceId = ilceId;
+
             int kayitSayisi = 0;
             try
             {
@@ -154,12 +177,12 @@ namespace DAL
             return kayitSayisi;
         }//Bitti
 
-        public List<Sporlar> SporGetir()
+        public List<T> SporGetir<T>()
         {
-            List<Sporlar> sporlar=null;
+            List<T> sporlar=null;
             try
             {
-                sporlar = con.Query<Sporlar>("Select * from Sporlar").ToList();
+                sporlar = con.Query<T>("Select * from Sporlar").ToList();
                 if (sporlar.Count>0)
                 {
                     return sporlar;
@@ -176,25 +199,25 @@ namespace DAL
             return sporlar;
         }
 
-        public List<Iller> IlAl()
+        public List<T> IlAl<T>()
         {
 
-            var Iller = con.Query<Iller>("Select * from Iller").ToList();
+            var Iller = con.Query<T>("Select * from Iller").ToList();
 
             return Iller;
         }///Bitti
 
-        public List<Ilce> IlceAl(int sehirId)
+        public List<T> IlceAl<T>(int sehirId)
         {
           
-                var Ilceler = con.Query<Ilce>("Select * from Ilceler Where Sehir=@Sehir",new { @Sehir = sehirId }).ToList();
+                var Ilceler = con.Query<T>("Select * from Ilceler Where Sehir=@Sehir",new { @Sehir = sehirId }).ToList();
                 
                 return Ilceler;
         }//Bitti
 
-        public List<EtkinlikGoster> EtkinlikAl()
+        public List<T> EtkinlikAl<T>()
         {
-            var etkinlikler = con.Query<EtkinlikGoster>("select e.EtkinlikId, EtkinlikAdi, SporAdi, et.Tip,EtkinlikTarihi,Kontenjan,m.MekanAdi,ilce.ad,il.Sehir  from Etkinlik as e" +
+            var etkinlikler = con.Query<T>("select e.EtkinlikId, EtkinlikAdi, SporAdi, et.Tip,EtkinlikTarihi,Kontenjan,m.MekanAdi,ilce.ad,il.Sehir  from Etkinlik as e" +
                 " inner join Sporlar as s on e.Sid = s.SporId " +
                 "inner join Mekan as m on e.MekanID = m.Mid " +
                 "inner join EtkinlikTipi as et on e.EtkinlikId = et.TipId " +
@@ -205,16 +228,16 @@ namespace DAL
             return etkinlikler;
         }
 
-        public List<EtkinlikTip> EtkinlikTipAl()
+        public List<T> EtkinlikTipAl<T>()
         {
-            var Etipler = con.Query<EtkinlikTip>("Select * from EtkinlikTipi").ToList();
+            var Etipler = con.Query<T>("Select * from EtkinlikTipi").ToList();
 
             return Etipler;
         }
 
-        public List<Mekanlar> MekanAl()
+        public List<T> MekanAl<T>()
         {
-            var mekanlar = con.Query<Mekanlar>("Select * from Mekan").ToList();
+            var mekanlar = con.Query<T>("Select * from Mekan").ToList();
 
             return mekanlar;
         }
@@ -248,6 +271,7 @@ namespace DAL
 
         public int Katil(int EtkinlikId,int UserId)
         {
+            
             int kayitSayisi = 0;
             try
             {
