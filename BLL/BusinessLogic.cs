@@ -28,19 +28,12 @@ namespace BLL
         public int LoginKontrol(string email, string sifre)
         {
             int ret = 0;
-
-            Kullanici k = new Kullanici();
             
-
             bool kontrol = EmailKontrol(email);
             if ( kontrol && !string.IsNullOrEmpty(sifre))
             {
-                k.Email = email;
-                k.Sifre = sifre;
-
-                UserId = da.LoginKontrol(k);
+                UserId = da.LoginKontrol(email, sifre);
                 ret = UserId;
-                k.Kid = UserId;
 
             }
             else
