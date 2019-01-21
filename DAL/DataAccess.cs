@@ -70,8 +70,11 @@ namespace DAL
             return kayitSayisi;
         }//Bitti
 
-        public int LoginKontrol(Kullanici k)
+        public int LoginKontrol(string email,string sifre)
         {
+            Kullanici k = new Kullanici();
+            k.Email = email;
+            k.Sifre = sifre;
             int kayitSayisi = 0;
             try
             {
