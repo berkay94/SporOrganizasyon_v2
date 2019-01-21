@@ -45,56 +45,56 @@ namespace BLL
             return ret;
         }
 
-        //public int KullaniciKaydet(string ad,string soyad,string email,string telefon,string sifre,string ilce,DateTime dogumtarihi,int cinsiyet,int[] spor)
-        //{
-        //    int kayitSayisi;
-        //    bool kontrol = EmailKontrol(email);
+        public int KullaniciKaydet(string ad, string soyad, string email, string telefon, string sifre, string ilce, DateTime dogumtarihi, int cinsiyet, int[] spor)
+        {
+            int kayitSayisi;
+            bool kontrol = EmailKontrol(email);
 
-        //    if (!string.IsNullOrEmpty(ad) && !string.IsNullOrEmpty(soyad) && kontrol)
-        //    {              
-        //        kayitSayisi = da.KullaniciKaydet(ad, soyad, email, telefon, sifre, ilce, dogumtarihi, cinsiyet,spor);
-        //    }
+            if (!string.IsNullOrEmpty(ad) && !string.IsNullOrEmpty(soyad) && kontrol)
+            {
+                kayitSayisi = da.KullaniciKaydet(ad, soyad, email, telefon, sifre, ilce, dogumtarihi, cinsiyet, spor);
+            }
 
-        //    else
-        //    {
-        //        kayitSayisi = -1;
-        //    }
+            else
+            {
+                kayitSayisi = -1;
+            }
 
-        //    return kayitSayisi;
-        //}
+            return kayitSayisi;
+        }
 
-        //public int EtkinlikAc(string etkinlikAd,int tipId,int mekanId,DateTime etkinlikTarihi,int kontenjan,int sporId)
-        //{
-        //    int kayitSayisi;
+        public int EtkinlikAc(string etkinlikAd, int tipId, int mekanId, DateTime etkinlikTarihi, int kontenjan, int sporId)
+        {
+            int kayitSayisi;
 
-        //    if (!string.IsNullOrEmpty(etkinlikAd)&& !string.IsNullOrEmpty(etkinlikTarihi.ToString()))
-        //    {    
-        //        kayitSayisi = da.EtkinlikAc(etkinlikAd, tipId, mekanId, etkinlikTarihi, kontenjan, sporId);
-        //    }
+            if (!string.IsNullOrEmpty(etkinlikAd) && !string.IsNullOrEmpty(etkinlikTarihi.ToString()))
+            {
+                kayitSayisi = da.EtkinlikAc(etkinlikAd, tipId, mekanId, etkinlikTarihi, kontenjan, sporId);
+            }
 
-        //    else
-        //    {
-        //        kayitSayisi = -1;
-        //    }
+            else
+            {
+                kayitSayisi = -1;
+            }
 
-        //    return kayitSayisi;
-        //}
+            return kayitSayisi;
+        }
 
-        //public int MekanAc(string mekanAdi, int ilceId)
-        //{
-        //    int kayitSayisi;
+        public int MekanAc(string mekanAdi, int ilceId)
+        {
+            int kayitSayisi;
 
-        //    if (!string.IsNullOrEmpty(mekanAdi))
-        //    {
-        //        kayitSayisi = da.MekanAc(mekanAdi, ilceId);
-        //    }
-        //    else
-        //    {
-        //        kayitSayisi = -1;
-        //    }
+            if (!string.IsNullOrEmpty(mekanAdi))
+            {
+                kayitSayisi = da.MekanAc(mekanAdi, ilceId);
+            }
+            else
+            {
+                kayitSayisi = -1;
+            }
 
-        //    return kayitSayisi;
-        //}
+            return kayitSayisi;
+        }
 
         public List<T> SporAl<T>()
         {
@@ -122,17 +122,17 @@ namespace BLL
 
         public List<T> EtkinlikAl<T>()
         {
-            List<T> etkinlik = da.EtkinlikAl();
+            List<T> etkinlik = da.EtkinlikAl<T>();
             return etkinlik;
         }
         public List<T> EtkinlikTipAl<T>()
         {
-            List<T> etip = da.EtkinlikTipAl();
+            List<T> etip = da.EtkinlikTipAl<T>();
             return etip;
         }
         public List<T> MekanAl<T>()
         {
-            List<T> mekan = da.MekanAl();
+            List<T> mekan = da.MekanAl<T>();
             return mekan;
         }
 

@@ -30,7 +30,7 @@ namespace SporOrganizasyon
 
         private void Kaydol_Load(object sender, EventArgs e)
         {
-            foreach (var spor in bl.SporAl())
+            foreach (var spor in bl.SporAl<Sporlar>())
             {
                 checkedListBoxSpor.Items.Add(spor);
                 

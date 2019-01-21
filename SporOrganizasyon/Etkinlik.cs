@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 namespace SporOrganizasyon
 {
     public partial class Etkinlik : Form
@@ -21,15 +22,15 @@ namespace SporOrganizasyon
 
         private void Etkinlik_Load(object sender, EventArgs e)
         {
-            comboBoxTip.DataSource = bl.EtkinlikTipAl();
+            comboBoxTip.DataSource = bl.EtkinlikTipAl<EtkinlikTip>();
             comboBoxTip.DisplayMember = "Tip";
             comboBoxTip.ValueMember = "TipId";
 
-            comboBoxMekan.DataSource = bl.MekanAl();
+            comboBoxMekan.DataSource = bl.MekanAl<Mekanlar>();
             comboBoxMekan.DisplayMember = "MekanAdi";
             comboBoxMekan.ValueMember = "Mid";
 
-            comboBoxSpor.DataSource = bl.SporAl();
+            comboBoxSpor.DataSource = bl.SporAl<Sporlar>();
             comboBoxSpor.DisplayMember = "SporAdi";
             comboBoxSpor.ValueMember = "SporId";
         }

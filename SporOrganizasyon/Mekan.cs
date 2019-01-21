@@ -27,12 +27,12 @@ namespace SporOrganizasyon
 
         private void Mekan_Load(object sender, EventArgs e)
         {
-            foreach (Iller il in bl.Iller())
+            foreach (Iller il in bl.Iller<Iller>())
             {
                 TreeNode node = new TreeNode(il.Sehir);
                 node.Tag = il.Id;
                 treeViewKonum.Nodes.Add(node);
-                foreach (Ilce ilce in bl.Ilceler(il.Id))
+                foreach (Ilce ilce in bl.Ilceler<Ilce>(il.Id))
                 {
                     TreeNode Altnode = new TreeNode(ilce.Ad);
                     Altnode.Tag = ilce.Id;

@@ -16,6 +16,7 @@ namespace DALLINQ
 
     //public int KullaniciKaydet(Kullanici k ,int[]s)
     //{
-
+    //    Kullanici kullanici = new Kullanici();
+        
     //}
 }

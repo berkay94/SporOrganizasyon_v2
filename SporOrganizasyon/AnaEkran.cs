@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 
 namespace SporOrganizasyon
 {
@@ -28,7 +29,7 @@ namespace SporOrganizasyon
         private void AnaEkran_Load(object sender, EventArgs e)
         {
            
-            dataGridView1.DataSource = bl.EtkinlikAl();
+            dataGridView1.DataSource = bl.EtkinlikAl<EtkinlikGoster>();
             dataGridView1.Columns["EtkinlikId"].Visible = false;
             labelGiris.Text = Username;
         }
