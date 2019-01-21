@@ -113,31 +113,6 @@ namespace DAL
             return kayitSayisi;
         }//Bitti
 
-        //public string Girildi(int UserId)
-        //{
-           
-        //    try
-        //    {
-        //        //var kullanici = con.ExecuteScalar<int>("SELECT IDENT_CURRENT('Kullanici')");
-        //        var user = con.Query<Kullanici>("Select * from Kullanici where isLogin=2 and Kid=@Kid",new {@Kid= UserId });
-              
-
-        //        foreach (Kullanici item in user)
-        //        {
-        //            return item.Ad;
-        //        }
-               
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Hata(ex);
-
-        //    }
-
-        //    return "";
-        //}
-
         public int EtkinlikAc(Etkinlikler e)
         {
             int kayitSayisi = 0;
