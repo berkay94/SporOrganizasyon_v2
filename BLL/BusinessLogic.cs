@@ -13,8 +13,6 @@ namespace BLL
     {
         DataAccess da;
 
-        public int UserId { get; set; }
-
         public BusinessLogic()
         {
             da = new DataAccess();
@@ -37,10 +35,9 @@ namespace BLL
             {
                 k.Email = email;
                 k.Sifre = sifre;
-
-                UserId = da.LoginKontrol(k);
-                ret = UserId;
-                k.Kid = UserId;
+                
+                ret = da.LoginKontrol(k);
+                k.Kid = ret;
 
             }
             else
@@ -173,11 +170,6 @@ namespace BLL
             return da.Katil(eid, kid);
         }
 
-        //public string Girildi()
-        //{
-
-        //    return da.Girildi(UserId);
-        //}
     }
 
 
