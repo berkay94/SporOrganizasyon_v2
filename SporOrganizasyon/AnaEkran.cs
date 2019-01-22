@@ -56,11 +56,15 @@ namespace SporOrganizasyon
 
         private void buttonKatil_Click(object sender, EventArgs e)
         {
-           
-
-          
-
-            MessageBox.Show(dataGridView1.SelectedRows[0].ToString());
+            int id = bl.Katil(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), Userid);
+            if (id > 0)
+            {
+                MessageBox.Show("Etkinliğe Katıldınız");
+            }
+            else
+            {
+                MessageBox.Show("Problem Oluştu");
+            }
         }
 
        
