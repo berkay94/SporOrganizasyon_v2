@@ -112,32 +112,7 @@ namespace DAL
 
             return kayitSayisi;
         }//Bitti
-
-        //public string Girildi(int UserId)
-        //{
-           
-        //    try
-        //    {
-        //        //var kullanici = con.ExecuteScalar<int>("SELECT IDENT_CURRENT('Kullanici')");
-        //        var user = con.Query<Kullanici>("Select * from Kullanici where isLogin=2 and Kid=@Kid",new {@Kid= UserId });
-              
-
-        //        foreach (Kullanici item in user)
-        //        {
-        //            return item.Ad;
-        //        }
-               
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Hata(ex);
-
-        //    }
-
-        //    return "";
-        //}
-
+                
         public int EtkinlikAc(Etkinlikler e)
         {
             int kayitSayisi = 0;
@@ -219,7 +194,7 @@ namespace DAL
             var etkinlikler = con.Query<EtkinlikGoster>("select e.EtkinlikId, EtkinlikAdi, SporAdi, et.Tip,EtkinlikTarihi,Kontenjan,m.MekanAdi,ilce.ad,il.Sehir  from Etkinlik as e" +
                 " inner join Sporlar as s on e.Sid = s.SporId " +
                 "inner join Mekan as m on e.MekanID = m.Mid " +
-                "inner join EtkinlikTipi as et on e.EtkinlikId = et.TipId " +
+                "inner join EtkinlikTipi as et on e.TipId = et.TipId " +
                 "inner join Ilceler as ilce on m.IlceId = ilce.Id " +
                 "inner join Iller as il on ilce.Sehir = il.Id " +
                 "where isActive = 1").ToList();
