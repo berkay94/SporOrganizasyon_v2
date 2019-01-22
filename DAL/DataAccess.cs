@@ -16,7 +16,7 @@ namespace DAL
     public class DataAccess
     {
         SqlConnection con;
-        string constr = "Data Source=LAPTOP-N5PLE4OO\\SQLEXPRESS;Initial Catalog=SporO;Integrated Security=True";
+        string constr = "Data Source=10.10.22.199;Initial Catalog=SporO;User ID=test2;Password=test2";
 
         public DataAccess()
         {
