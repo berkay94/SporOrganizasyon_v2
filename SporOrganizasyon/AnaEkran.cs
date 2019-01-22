@@ -66,7 +66,7 @@ namespace SporOrganizasyon
                 MessageBox.Show("Problem Oluştu");
             }
         }
-
+        //asdassd
        
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
