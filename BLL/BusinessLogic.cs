@@ -47,6 +47,11 @@ namespace BLL
             return ret;
         }
 
+        public void Logout(int Userid)
+        {
+            da.Logout(Userid);
+        }
+
         public int KullaniciKaydet(string ad,string soyad,string email,string telefon,string sifre,string ilce,DateTime dogumtarihi,int cinsiyet,int[] spor)
         {
             int kayitSayisi;

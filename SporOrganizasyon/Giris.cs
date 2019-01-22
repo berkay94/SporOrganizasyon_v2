@@ -38,6 +38,10 @@ namespace SporOrganizasyon
                 this.Close();
                
             }
+            else if (id == -2)
+            {
+                MessageBox.Show("Böyle Bir Kullanici Şu Anda Online. Çıkış Yapmadan Giremezsin");
+            }
             else
                 MessageBox.Show("Giriş Başarısız");
         }
@@ -53,9 +57,7 @@ namespace SporOrganizasyon
         private void Giris_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-        }
-
-        
+        }               
 
         private void txtKullanici_Click(object sender, EventArgs e)
         {
@@ -68,11 +70,8 @@ namespace SporOrganizasyon
             if (txtSifre.Text == "Şifre")
             txtSifre.Clear();
             txtSifre.PasswordChar = '*';
-            
-            
         }
-
-       
+        
         private void txtSifre_Enter(object sender, EventArgs e)
         {
             if (txtSifre.Text == "Şifre")

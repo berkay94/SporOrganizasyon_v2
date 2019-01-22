@@ -32,6 +32,11 @@ namespace SporOrganizasyon
             labelGiris.Text = Username;
         }
 
+        private void AnaEkran_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            bl.Logout(Userid);
+        }
+
         private void buttonMekan_Click(object sender, EventArgs e)
         {
             Mekan mekan = new Mekan();
@@ -87,5 +92,6 @@ namespace SporOrganizasyon
         {
             buttonKatil.Visible = true;
         }
+
     }
 }

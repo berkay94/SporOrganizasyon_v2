@@ -16,7 +16,7 @@ namespace DAL
     public class DataAccess
     {
         SqlConnection con;
-        string constr = "Data Source=10.10.22.199;Initial Catalog=SporO;User ID=test2;Password=test2";
+        string constr = "Data Source=LAPTOP-N5PLE4OO\\SQLEXPRESS;Initial Catalog=SporO;Integrated Security=True";
 
         public DataAccess()
         {
@@ -82,18 +82,28 @@ namespace DAL
                     kayitSayisi = 1;
                     foreach (Kullanici item in user)
                     {
-                        try
+
+                        if (item.IsLogin == 2)
                         {
-                          var login= con.Query<Kullanici>("IsLoginUser", new { @kid=item.Kid },commandType:CommandType.StoredProcedure);
+                            kayitSayisi = -2;
                         }
-                        catch (Exception ex)
+                        else
                         {
-                            Hata(ex);
+                            try
+                            {
+                                var login = con.Query<Kullanici>("IsLoginUser", new { @kid = item.Kid }, commandType: CommandType.StoredProcedure);
+                                // update islogin = 2 
+                            }
+                            catch (Exception ex)
+                            {
+                                Hata(ex);
+                            }
+                            finally
+                            {
+                                kayitSayisi = item.Kid;
+                            }
                         }
-                        finally
-                        {
-                            kayitSayisi = item.Kid;
-                        }
+                        
                     }
                 }
                 
@@ -112,6 +122,19 @@ namespace DAL
 
             return kayitSayisi;
         }//Bitti
+
+        public void Logout(int UserId)
+        {
+            try
+            {
+                var islogin = con.Query<Kullanici>("Update Kullanici set isLogin = 1 where Kid = @kid", new { @kid = UserId });
+
+            }
+            catch (Exception ex)
+            {
+                Hata(ex);
+            }
+        }
                 
         public int EtkinlikAc(Etkinlikler e)
         {
