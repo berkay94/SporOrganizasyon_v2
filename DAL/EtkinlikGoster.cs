@@ -13,9 +13,10 @@ namespace DAL
         public string SporAdi { get; set; }
         public string Tip { get; set; }
         public DateTime EtkinlikTarihi { get; set; }
-        public int Kontenjan { get; set; }
         public string MekanAdi { get; set; }
         public string Ad { get; set; }
         public string Sehir { get; set; }
+        public int Kontenjan { get; set; }
+        public int Katilanlar { get; set; }
     }
 }

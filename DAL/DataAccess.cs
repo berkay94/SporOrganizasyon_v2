@@ -191,13 +191,17 @@ namespace DAL
 
         public List<EtkinlikGoster> EtkinlikAl()
         {
-            var etkinlikler = con.Query<EtkinlikGoster>("select e.EtkinlikId, EtkinlikAdi, SporAdi, et.Tip,EtkinlikTarihi,Kontenjan,m.MekanAdi,ilce.ad,il.Sehir  from Etkinlik as e" +
-                " inner join Sporlar as s on e.Sid = s.SporId " +
-                "inner join Mekan as m on e.MekanID = m.Mid " +
-                "inner join EtkinlikTipi as et on e.TipId = et.TipId " +
-                "inner join Ilceler as ilce on m.IlceId = ilce.Id " +
-                "inner join Iller as il on ilce.Sehir = il.Id " +
-                "where isActive = 1").ToList();
+            List<EtkinlikGoster> etkinlikler = null;
+            try
+            {
+                var deneme = con.Query<EtkinlikGoster>("EtkinlikAl", commandType: CommandType.StoredProcedure);
+
+                etkinlikler = deneme.ToList();
+            }
+            catch (Exception ex)
+            {
+                Hata(ex);
+            }
             
             return etkinlikler;
         }
