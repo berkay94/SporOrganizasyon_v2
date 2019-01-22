@@ -36,9 +36,7 @@ namespace BLL
                 k.Email = email;
                 k.Sifre = sifre;
                 
-                ret = da.LoginKontrol(k);
-                k.Kid = ret;
-
+                ret = da.LoginKontrol(k); // kullanici id geri döner
             }
             else
             {
@@ -65,9 +63,7 @@ namespace BLL
                 k.Ilce = ilce;
                 k.DogumTarihi = dogumtarihi;
                 k.Cinsiyet = cinsiyet;
-
-
-              
+                
                 kayitSayisi = da.KullaniciKaydet(k,spor);
             }
 
@@ -124,28 +120,19 @@ namespace BLL
 
         public List<Sporlar> SporAl()
         {
-
-
             var spor = da.SporGetir();
-
             return spor;
         }
 
         public List<Iller> Iller()
         {
-
-
             var il = da.IlAl();
-
             return il;
         }
 
         public List<Ilce> Ilceler(int sehir)
         {
-           
-            
             var ilce = da.IlceAl(sehir);
-
             return ilce;
         }
 

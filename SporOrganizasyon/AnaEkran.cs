@@ -26,16 +26,10 @@ namespace SporOrganizasyon
         }
 
         private void AnaEkran_Load(object sender, EventArgs e)
-        {
-           
+        {           
             dataGridView1.DataSource = bl.EtkinlikAl();
             dataGridView1.Columns["EtkinlikId"].Visible = false;
             labelGiris.Text = Username;
-        }
-
-        private void AnaEkran_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
         }
 
         private void buttonMekan_Click(object sender, EventArgs e)

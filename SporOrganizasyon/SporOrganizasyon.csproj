@@ -80,6 +80,7 @@
     <Compile Include="Mekan.Designer.cs">
       <DependentUpon>Mekan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Param.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnaEkran.resx">

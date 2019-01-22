@@ -43,14 +43,13 @@ namespace SporOrganizasyon
             int[] sporlar = new int[checkedListBoxSpor.CheckedItems.Count];
             for (int i = 0; i < sporlar.Length; i++)
             {
+                
                 Sporlar castedItem = checkedListBoxSpor.CheckedItems[i] as Sporlar;
                 sporlar[i] = castedItem.SporId;
             }
 
             int k = bl.KullaniciKaydet(txtAd.Text, txtSoyad.Text, txtEmail.Text, maskedTelefon.Text, txtSifre.Text, txtIlce.Text,Convert.ToDateTime(dateTimeTrh.Text),Convert.ToInt32(comboBoxCins.ValueMember),sporlar);
-
-          
-
+            
             if (k > 0)
             {
                 MessageBox.Show("Kayıt Eklendi");
@@ -66,7 +65,7 @@ namespace SporOrganizasyon
 
         private void comboBoxCins_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxCins.SelectedIndex==0)
+            if(comboBoxCins.SelectedIndex == 0)
             {
                 comboBoxCins.ValueMember = "0";
             }
@@ -75,7 +74,6 @@ namespace SporOrganizasyon
                 comboBoxCins.ValueMember = "1";
             }
         }
-
-       
+        
     }
 }
