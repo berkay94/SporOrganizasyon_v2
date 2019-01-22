@@ -51,6 +51,7 @@
     <Compile Include="EtkinlikTip.cs" />
     <Compile Include="Ilce.cs" />
     <Compile Include="Iller.cs" />
+    <Compile Include="Katilanlar.cs" />
     <Compile Include="Kullanici.cs" />
     <Compile Include="Mekanlar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

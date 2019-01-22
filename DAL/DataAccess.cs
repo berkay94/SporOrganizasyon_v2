@@ -264,6 +264,32 @@ namespace DAL
 
             return kayitSayisi;
         }
+
+        public int EtkinlikKisiKontrol(int EtkinlikId, int UserId)
+        {
+            int ret = 0;
+
+            try
+            {
+                string sql = "select * from Katilanlar where Eid = @Eid";
+                List<Katilanlar> kisiler = con.Query<Katilanlar>(sql, new { @Eid = EtkinlikId }).ToList();
+
+                foreach (Katilanlar kisi in kisiler)
+                {
+                    if (kisi.Kid == UserId)
+                    {
+                        ret = 1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Hata(ex);
+            }
+
+            return ret;
+        }
+
     }
 
 }

@@ -50,15 +50,37 @@ namespace SporOrganizasyon
 
         private void buttonKatil_Click(object sender, EventArgs e)
         {
-            int id = bl.Katil(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), Userid);
-            if (id > 0)
+            if (Convert.ToInt32(dataGridView1.CurrentRow.Cells["Kontenjan"].Value) <= Convert.ToInt32(dataGridView1.CurrentRow.Cells["Katilanlar"].Value))
             {
-                MessageBox.Show("Etkinliğe Katıldınız");
+                MessageBox.Show("Yer Yok");
             }
             else
             {
-                MessageBox.Show("Problem Oluştu");
+
+                if (bl.EtkinlikKisiKontrol(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), Userid) > 0)
+                {
+                    MessageBox.Show("Bu Etkinliğe önceden Kayit olmuşsunuz...");
+                }
+
+                else
+                {
+                    int id = bl.Katil(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), Userid);
+                    if (id > 0)
+                    {
+                        MessageBox.Show("Etkinliğe Katıldınız");
+                        dataGridView1.DataSource = null;
+                        dataGridView1.DataSource = bl.EtkinlikAl();
+                        dataGridView1.Columns["EtkinlikId"].Visible = false;
+                        labelGiris.Text = Username;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Problem Oluştu");
+                    }
+                }
+                
             }
+
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)

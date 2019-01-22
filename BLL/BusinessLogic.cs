@@ -157,6 +157,15 @@ namespace BLL
             return da.Katil(eid, kid);
         }
 
+        public int EtkinlikKisiKontrol(int EtkinlikId, int UserId)
+        {
+            int ret = 0;
+
+            ret = da.EtkinlikKisiKontrol(EtkinlikId, UserId);
+            
+            return ret;
+        }
+
     }
 
 
