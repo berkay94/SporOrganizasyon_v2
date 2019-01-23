@@ -12,7 +12,6 @@ using System.Data;
 namespace DAL
 {
     
-    
     public class DataAccess
     {
         SqlConnection con;
@@ -111,13 +110,11 @@ namespace DAL
                 {
                     HataVar("Bilgiler Hatali");
                 }
-
                 
             }
             catch (Exception ex)
             {
                 Hata(ex);
-
             }
 
             return kayitSayisi;
@@ -265,7 +262,6 @@ namespace DAL
                 if (!string.IsNullOrEmpty(frame.GetFileName()))
                 {
                     con.Execute("Insert Into HataLoglari(DosyaAdi,MethodAdi,LineNumber,ColumnNumber,Message) Values(@DosyaAdi,@MethodAdi,@LineNumber,@ColumnNumber,@Message)", new { @DosyaAdi = Path.GetFileName(frame.GetFileName()), @MethodAdi = frame.GetMethod().ToString(), @LineNumber = frame.GetFileLineNumber(), @ColumnNumber = frame.GetFileColumnNumber(), @Message = mesaj});
-
                 }
             }
         }//Bitti
@@ -278,6 +274,33 @@ namespace DAL
                 string sql = "Insert Into Katilanlar Values(@Eid,@Kid)";
                 
                 kayitSayisi = con.Execute(sql, new { @Eid = EtkinlikId, @Kid = UserId });
+
+            }
+            catch (Exception ex)
+            {
+                Hata(ex);
+            }
+
+            return kayitSayisi;
+        }
+
+        public int Cikis(int EtkinlikId, int UserId)
+        {
+            int kayitSayisi = 0;
+            try
+            {
+                string sql = "Select * from Katilanlar where Eid = @Eid";
+
+                var katilanlar = con.Query<Katilanlar>(sql, new { @Eid = EtkinlikId }).ToList();
+
+                foreach (Katilanlar katilan in katilanlar)
+                {
+                    if (katilan.Kid == UserId)
+                    {
+                        string delete = "Delete from Katilanlar where Eid = @Eid and Kid = @Kid";
+                        kayitSayisi = con.Execute(delete, new { @Eid = EtkinlikId, @Kid = UserId });
+                    }
+                }
 
             }
             catch (Exception ex)

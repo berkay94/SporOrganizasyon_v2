@@ -30,11 +30,12 @@
         {
             this.labelHg = new System.Windows.Forms.Label();
             this.buttonEtkinlik = new System.Windows.Forms.Button();
-            this.buttonKatil = new System.Windows.Forms.Button();
             this.buttonMekan = new System.Windows.Forms.Button();
             this.labelGiris = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonKatil = new System.Windows.Forms.Button();
+            this.buttonEtkinlikCik = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.buttonEtkinlik.BackColor = System.Drawing.Color.Transparent;
             this.buttonEtkinlik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEtkinlik.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonEtkinlik.Location = new System.Drawing.Point(59, 64);
+            this.buttonEtkinlik.Location = new System.Drawing.Point(106, 69);
             this.buttonEtkinlik.Name = "buttonEtkinlik";
             this.buttonEtkinlik.Size = new System.Drawing.Size(145, 40);
             this.buttonEtkinlik.TabIndex = 4;
@@ -62,25 +63,12 @@
             this.buttonEtkinlik.UseVisualStyleBackColor = false;
             this.buttonEtkinlik.Click += new System.EventHandler(this.buttonEtkinlik_Click);
             // 
-            // buttonKatil
-            // 
-            this.buttonKatil.BackColor = System.Drawing.Color.Transparent;
-            this.buttonKatil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonKatil.Location = new System.Drawing.Point(371, 35);
-            this.buttonKatil.Name = "buttonKatil";
-            this.buttonKatil.Size = new System.Drawing.Size(145, 40);
-            this.buttonKatil.TabIndex = 5;
-            this.buttonKatil.Text = "Etkinliğe Katıl";
-            this.buttonKatil.UseVisualStyleBackColor = false;
-            this.buttonKatil.Visible = false;
-            this.buttonKatil.Click += new System.EventHandler(this.buttonKatil_Click);
-            // 
             // buttonMekan
             // 
             this.buttonMekan.BackColor = System.Drawing.Color.Transparent;
             this.buttonMekan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMekan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonMekan.Location = new System.Drawing.Point(666, 64);
+            this.buttonMekan.Location = new System.Drawing.Point(712, 69);
             this.buttonMekan.Name = "buttonMekan";
             this.buttonMekan.Size = new System.Drawing.Size(145, 40);
             this.buttonMekan.TabIndex = 6;
@@ -112,12 +100,40 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 496);
+            this.dataGridView1.Location = new System.Drawing.Point(-1, 496);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(839, 141);
+            this.dataGridView1.Size = new System.Drawing.Size(945, 141);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            // 
+            // buttonKatil
+            // 
+            this.buttonKatil.BackColor = System.Drawing.Color.Transparent;
+            this.buttonKatil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonKatil.Location = new System.Drawing.Point(308, 18);
+            this.buttonKatil.Name = "buttonKatil";
+            this.buttonKatil.Size = new System.Drawing.Size(145, 40);
+            this.buttonKatil.TabIndex = 5;
+            this.buttonKatil.Text = "Etkinliğe Katıl";
+            this.buttonKatil.UseVisualStyleBackColor = false;
+            this.buttonKatil.Visible = false;
+            this.buttonKatil.Click += new System.EventHandler(this.buttonKatil_Click);
+            // 
+            // buttonEtkinlikCik
+            // 
+            this.buttonEtkinlikCik.BackColor = System.Drawing.Color.Transparent;
+            this.buttonEtkinlikCik.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEtkinlikCik.Location = new System.Drawing.Point(510, 18);
+            this.buttonEtkinlikCik.Name = "buttonEtkinlikCik";
+            this.buttonEtkinlikCik.Size = new System.Drawing.Size(145, 40);
+            this.buttonEtkinlikCik.TabIndex = 12;
+            this.buttonEtkinlikCik.Text = "Etkinlinten Çık";
+            this.buttonEtkinlikCik.UseVisualStyleBackColor = false;
+            this.buttonEtkinlikCik.Visible = false;
+            this.buttonEtkinlikCik.Click += new System.EventHandler(this.buttonEtkinlikCik_Click);
             // 
             // AnaEkran
             // 
@@ -125,7 +141,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SporOrganizasyon.Properties.Resources.en_iyi_spor_dallari_758x379;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(853, 638);
+            this.ClientSize = new System.Drawing.Size(945, 638);
+            this.Controls.Add(this.buttonEtkinlikCik);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelGiris);
@@ -149,10 +166,11 @@
         #endregion
         private System.Windows.Forms.Label labelHg;
         private System.Windows.Forms.Button buttonEtkinlik;
-        private System.Windows.Forms.Button buttonKatil;
         private System.Windows.Forms.Button buttonMekan;
         private System.Windows.Forms.Label labelGiris;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonKatil;
+        private System.Windows.Forms.Button buttonEtkinlikCik;
     }
 }

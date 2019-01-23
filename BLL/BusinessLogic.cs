@@ -162,6 +162,11 @@ namespace BLL
             return da.Katil(eid, kid);
         }
 
+        public int Cikis(int eid, int kid)
+        {
+            return da.Cikis(eid, kid);
+        }
+
         public int EtkinlikKisiKontrol(int EtkinlikId, int UserId)
         {
             int ret = 0;

@@ -90,10 +90,27 @@ namespace SporOrganizasyon
 
         }
 
+        private void buttonEtkinlikCik_Click(object sender, EventArgs e)
+        {
+            if (bl.Cikis(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()), Userid) > 0)
+            {
+                MessageBox.Show("Bu Etkinlikten Çıktınız...");
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = bl.EtkinlikAl();
+                dataGridView1.Columns["EtkinlikId"].Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Zaten Bu Olaya Katilmamışsınız...");
+            }
+
+        }
+
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             buttonKatil.Visible = true;
+            buttonEtkinlikCik.Visible = true;
         }
-
+        
     }
 }
