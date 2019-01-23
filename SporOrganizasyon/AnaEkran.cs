@@ -50,6 +50,9 @@ namespace SporOrganizasyon
             Etkinlik etkinlik = new Etkinlik();
             this.Hide();
             etkinlik.ShowDialog();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = bl.EtkinlikAl();
+            dataGridView1.Columns["EtkinlikId"].Visible = false;
             this.Show();
         }
 
@@ -76,7 +79,6 @@ namespace SporOrganizasyon
                         dataGridView1.DataSource = null;
                         dataGridView1.DataSource = bl.EtkinlikAl();
                         dataGridView1.Columns["EtkinlikId"].Visible = false;
-                        labelGiris.Text = Username;
                     }
                     else
                     {
