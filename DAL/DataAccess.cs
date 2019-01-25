@@ -28,7 +28,7 @@ namespace DAL
             try
             {
                
-                string sql = "Insert Into Kullanici(Ad,Soyad,Email,Telefon,Sifre,Ilçe,DogumTarihi,Cinsiyet) Values(@ad,@soyad,@email,@telefon,@sifre,@ılce,@dogumtarihi,@cinsiyet)";
+                string sql = "Insert Into Kullanici(Ad,Soyad,Email,Telefon,Sifre,Ilce,DogumTarihi,Cinsiyet) Values(@ad,@soyad,@email,@telefon,@sifre,@ılce,@dogumtarihi,@cinsiyet)";
 
                 kayitSayisi = con.Execute(sql, new { @ad = k.Ad, @soyad = k.Soyad, @email = k.Email, @telefon = k.Telefon, @sifre = k.Sifre, @ılce = k.Ilce, @dogumtarihi = k.DogumTarihi, @cinsiyet = k.Cinsiyet });
 
